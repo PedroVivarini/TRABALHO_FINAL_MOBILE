@@ -4,12 +4,12 @@ import { useNavigation } from '@react-navigation/native';
 import { styles } from "./style";
 
 
-export default function Login() {
+export default function Home() {
   const navigation = useNavigation ();
   
   return (
     <View style={styles.container}>
-      <Text>Pagina login</Text>
+      <Text>Pagina Home</Text>
     </View>
   )
 }
