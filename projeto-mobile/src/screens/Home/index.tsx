@@ -31,7 +31,6 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit }) => {
             <Text style={styles.habitTime}>{habit.time}</Text>
           </View>
         </View>
-        {/* Parte removida: checkbox */}
       </View>
     </View>
   );
