@@ -4,13 +4,12 @@ import { useNavigation } from '@react-navigation/native';
 import { styles } from "./style";
 
 
-export default function Sobre() {
+export default function Habitos() {
   const navigation = useNavigation ();
-
-
+  
   return (
     <View style={styles.container}>
-      <Text>Pagina sobre</Text>
+      <Text>Pagina Contato</Text>
     </View>
   )
 }
