@@ -1,8 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import AppRouter from './src/routes/AppRouter';
 import { View, Text } from 'react-native'
-import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/screens/Home';
@@ -14,16 +11,6 @@ import Estatistica from './src/screens/Estatistica';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
-  return (
-    <>
-      <AppRouter />
-          <View>
-      <Text>Trabalho mobile</Text>
-    </View>
-    </>
-  );
-}
 
 export default function App() {
   return (
@@ -33,7 +20,7 @@ export default function App() {
         screenOptions={{
           headerShown: false,
           tabBarInactiveTintColor: "#fff",
-          tabBarActiveTintColor: "#a42dffff",
+          tabBarActiveTintColor: "#ad75fbff",
           tabBarLabelPosition: "below-icon",
 
           tabBarIconStyle: {
