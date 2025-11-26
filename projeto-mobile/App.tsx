@@ -1,3 +1,6 @@
+import React from 'react';
+import { View, Text } from 'react-native';
+import AppRouter from './src/routes/AppRouter';
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -10,6 +13,17 @@ import Habitos from './src/screens/Habitos';
 import Estatistica from './src/screens/Estatistica';
 
 const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <>
+      <AppRouter />
+          <View>
+      <Text>Trabalho mobile</Text>
+    </View>
+    </>
+  );
+}
 
 export default function App() {
   return (
