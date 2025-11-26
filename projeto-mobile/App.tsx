@@ -1,10 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text } from 'react-native';
+import AppRouter from './src/routes/AppRouter';
 
 export default function App() {
   return (
-    <View>
+    <>
+      <AppRouter />
+          <View>
       <Text>Trabalho mobile</Text>
     </View>
-  )
+    </>
+  );
 }
