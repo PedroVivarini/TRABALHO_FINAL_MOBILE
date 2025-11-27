@@ -1,96 +1,89 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
-const screenWidth = Dimensions.get('window').width;
+import { StyleSheet } from 'react-native';
 
 const COLORS = {
-  background: '#1e1e1e',
-  card: '#252526',
-  textPrimary: '#cccccc',
-  textSecondary: '#808080',
-  accent: '#007acc',
+  background: '#F8F9FA', 
+  primary: '#4CAF50', 
+  secondary: '#FFC107', 
+  text: '#212529', 
+  textSecondary: '#6C757D', 
+  cardBackground: '#FFFFFF', 
 };
 
 export const styles = StyleSheet.create({
-  safeArea: {
+  container: {
     flex: 1,
     backgroundColor: COLORS.background,
+    padding: 20,
   },
-  container: {
-    padding: 15,
-  },
-
   header: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
-    color: COLORS.textPrimary,
+    color: COLORS.text,
     marginBottom: 20,
-    textAlign: 'center',
+    marginTop: 10,
   },
-
-  statsRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  metricCard: {
+    backgroundColor: COLORS.primary,
+    padding: 20,
+    borderRadius: 12,
     marginBottom: 20,
+    elevation: 5,
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
   },
-  statItem: {
-    flex: 1,
-    backgroundColor: COLORS.card,
-    borderRadius: 6,
-    padding: 15,
-    marginHorizontal: 5,
-    alignItems: 'center',
+  metricTitle: {
+    fontSize: 16,
+    color: COLORS.cardBackground,
+    opacity: 0.8,
   },
-  statLabel: {
-    fontSize: 14,
-    color: COLORS.textSecondary,
-    marginBottom: 5,
+  metricValue: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: COLORS.cardBackground,
   },
-  statValue: {
+  
+  sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: COLORS.textPrimary,
-  },
-
-  sectionHeader: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: COLORS.textPrimary,
-    marginTop: 15,
+    color: COLORS.text,
     marginBottom: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: COLORS.card,
-    paddingBottom: 5,
+    marginTop: 10,
   },
-
-  languagesSection: {
-    marginBottom: 20,
-  },
-  languageContainer: {
+  detailCard: {
+    backgroundColor: COLORS.cardBackground,
+    padding: 15,
+    borderRadius: 8,
     marginBottom: 10,
-  },
-  languageName: {
-    fontSize: 14,
-    color: COLORS.textPrimary,
-    marginBottom: 3,
-  },
-  languageBarWrapper: {
-    height: 15,
-    backgroundColor: COLORS.card,
-    borderRadius: 4,
-    overflow: 'hidden',
+    borderLeftWidth: 4,
+    borderLeftColor: COLORS.secondary,
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
-  languageBar: {
-    height: '100%',
-    backgroundColor: COLORS.accent,
-    borderRadius: 4,
+  detailTextContainer: {
+    flex: 1,
   },
-  languagePercentage: {
-    position: 'absolute',
-    right: 5,
-    color: COLORS.textPrimary,
-    fontSize: 10,
-    fontWeight: 'bold',
-  }
+  detailLabel: {
+    fontSize: 14,
+    color: COLORS.textSecondary,
+  },
+  detailValue: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: COLORS.text,
+  },
+
+  progressBarContainer: {
+    height: 10,
+    backgroundColor: '#E9ECEF',
+    borderRadius: 5,
+    marginTop: 5,
+  },
+  progressBar: {
+    height: '100%',
+    backgroundColor: COLORS.primary,
+    borderRadius: 5,
+  },
 });
