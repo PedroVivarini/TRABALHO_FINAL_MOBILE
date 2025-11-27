@@ -51,6 +51,24 @@ export const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
 
+  searchBox: {
+    marginVertical: 10,
+    paddingHorizontal: 15,
+  },
+  searchInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+  },
+  searchInput: {
+    flex: 1,
+    paddingVertical: 8,
+    fontSize: 16,
+    color: '#000',
+  },
+
   weatherCard: {
     backgroundColor: '#2a2a2a',
     borderRadius: 16,
@@ -78,26 +96,26 @@ export const styles = StyleSheet.create({
     marginBottom: 4,
     textTransform: 'capitalize',
   },
-weatherTemp: {
-  fontSize: 20,
-  fontWeight: 'bold',
-  color: '#fff',
-  textAlign: 'center',
-},
-weatherLocation: {
-  fontSize: 8,
-  color: '#fff',
-  marginTop: 2,
-  fontWeight: '200',
-  textAlign: 'center',
-},
-weatherDesc: {
-  fontSize: 16,
-  color: '#ccc',
-  marginTop: 2,
-  textTransform: 'capitalize',
-  textAlign: 'center',
-},
+  weatherTemp: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+  },
+  weatherLocation: {
+    fontSize: 8,
+    color: '#fff',
+    marginTop: 2,
+    fontWeight: '200',
+    textAlign: 'center',
+  },
+  weatherDesc: {
+    fontSize: 16,
+    color: '#ccc',
+    marginTop: 2,
+    textTransform: 'capitalize',
+    textAlign: 'center',
+  },
 
   beneficioCard: {
     backgroundColor: '#2a2a2a',

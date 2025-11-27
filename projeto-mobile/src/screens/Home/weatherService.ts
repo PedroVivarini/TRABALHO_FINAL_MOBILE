@@ -7,16 +7,40 @@ export interface WeatherData {
   weather: { description: string; icon: string }[];
   main: { temp: number };
   name: string;
+  time: string;
 }
 
 export const getWeather = async (city: string = 'Petrópolis'): Promise<WeatherData | null> => {
   try {
-    const response = await axios.get<WeatherData>(
-      `${BASE_URL}?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`
+
+    const trimmedCity = city.trim();
+    if (!trimmedCity) {
+      console.warn('Cidade não informada, busca ignorada.');
+      return null;
+    }
+
+
+    const encodedCity = encodeURIComponent(trimmedCity);
+
+    const response = await axios.get<Omit<WeatherData, 'time'>>(
+      `${BASE_URL}?q=${encodedCity}&appid=${API_KEY}&units=metric&lang=pt_br`
     );
-    return response.data;
-  } catch (error) {
-    console.error('Erro ao buscar clima:', error);
+
+
+    const now = new Date();
+    const formattedTime = now.toLocaleTimeString('pt-BR', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+
+    return {
+      ...response.data,
+      time: formattedTime,
+    };
+  } catch (error: any) {
+
+    const message = error?.response?.data?.message || error.message;
+    console.error(`Erro ao buscar clima para "${city}":`, message);
     return null;
   }
 };
