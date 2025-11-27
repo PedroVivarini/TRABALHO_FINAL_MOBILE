@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import Home from './src/screens/Home';
-import Login from './src/screens/Login'; 
-import Ajustes from './src/screens/Ajustes';
-import { Feather } from "@expo/vector-icons"
+import Login from './src/screens/Login';
 import Habitos from './src/screens/Habitos';
 import Estatistica from './src/screens/Estatistica';
+import { SettingsStack } from './src/routes/SettingsStack';
+import { Feather } from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
@@ -80,11 +80,30 @@ export default function App() {
         />
 
         <Tab.Screen
-          name="Ajustes" component={Ajustes}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="settings" color={color} size={size} />
-            ),
+          name="Ajustes"
+          component={SettingsStack}
+          options={({ route }) => {
+
+            const routeName = getFocusedRouteNameFromRoute(route);
+            const screensToHideTab = ['MinhaConta', 'Salvos', 'Sobre', 'Politica'];
+            const isTabBarVisible = !screensToHideTab.includes(routeName);
+
+
+            return ({
+              tabBarIcon: ({ color, size }) => (
+                <Feather name="settings" color={color} size={size} />
+              ),
+
+              tabBarStyle: {
+                display: isTabBarVisible ? 'flex' : 'none',
+                backgroundColor: "#171719",
+                borderTopWidth: 0,
+                height: 70,
+                borderRadius: 50,
+                position: "absolute",
+                bottom: 25,
+              }
+            });
           }}
         />
 
