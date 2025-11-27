@@ -74,7 +74,7 @@ export default function App() {
           name="Estáticas" component={Estatistica}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Feather name="check-circle" color={color} size={size} />
+              <Feather name="bar-chart" color={color} size={size} />
             ),
           }}
         />
