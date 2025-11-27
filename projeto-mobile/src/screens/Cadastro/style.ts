@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: "#070707ff",
+    backgroundColor: "#23012e6e",
   },
   container: {
     flex: 1,
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
   },
   input: {
-    backgroundColor: "#faf7f7ff",
+    backgroundColor: "#FFF",
     width: "90%",
     fontSize: 17,
     padding: 10,
