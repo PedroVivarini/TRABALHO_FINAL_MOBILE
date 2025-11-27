@@ -50,17 +50,14 @@ const StatisticsScreen: React.FC = () => {
     <ScrollView style={styles.container}>
       <Text style={styles.header}>🏆 Seu Progresso de Hábitos</Text>
 
-      {/* --- Métrica Principal: Maior Sequência (Streak) --- */}
       <View style={styles.metricCard}>
         <Text style={styles.metricTitle}>MAIOR SEQUÊNCIA CONSECUTIVA</Text>
         <Text style={styles.metricValue}>{longestStreak} dias</Text>
         <Text style={styles.metricTitle}>Não quebre a corrente! Sequência Atual: {currentStreak} dias</Text>
       </View>
 
-      {/* --- Seção de Visão Geral --- */}
       <Text style={styles.sectionTitle}>Visão Geral</Text>
       
-      {/* Taxa de Conclusão */}
       <View style={styles.detailCard}>
         <View style={styles.detailTextContainer}>
           <Text style={styles.detailLabel}>Taxa Média de Conclusão</Text>
@@ -68,7 +65,6 @@ const StatisticsScreen: React.FC = () => {
         </View>
       </View>
 
-      {/* Total de Hábitos Concluídos */}
       <View style={[styles.detailCard, { borderLeftColor: '#42A5F5' }]}>
         <View style={styles.detailTextContainer}>
           <Text style={styles.detailLabel}>Total de Check-ins (Concluídos)</Text>
@@ -76,7 +72,6 @@ const StatisticsScreen: React.FC = () => {
         </View>
       </View>
 
-      {/* --- Seção de Progresso Individual --- */}
       <Text style={styles.sectionTitle}>Metas de Hábitos</Text>
 
       {habitDetails.map((habit, index) => (
@@ -98,7 +93,7 @@ const StatisticsScreen: React.FC = () => {
         </View>
       ))}
       
-      <View style={{ height: 40 }} /> {/* Espaço extra no final da rolagem */}
+      <View style={{ height: 40 }} /> 
     </ScrollView>
   );
 };

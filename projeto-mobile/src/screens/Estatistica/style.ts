@@ -1,13 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-// Definição de Cores
 const COLORS = {
-  background: '#F8F9FA', // Fundo claro
-  primary: '#4CAF50', // Verde de sucesso/hábito concluído
-  secondary: '#FFC107', // Amarelo de atenção/progresso
-  text: '#212529', // Texto principal escuro
-  textSecondary: '#6C757D', // Texto secundário/menor
-  cardBackground: '#FFFFFF', // Fundo do cartão
+  background: '#F8F9FA', 
+  primary: '#4CAF50', 
+  secondary: '#FFC107', 
+  text: '#212529', 
+  textSecondary: '#6C757D', 
+  cardBackground: '#FFFFFF', 
 };
 
 export const styles = StyleSheet.create({
@@ -23,7 +22,6 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 10,
   },
-  // --- Cartão de Métrica Principal ---
   metricCard: {
     backgroundColor: COLORS.primary,
     padding: 20,
