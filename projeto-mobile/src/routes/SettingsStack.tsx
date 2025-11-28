@@ -1,105 +1,55 @@
 import React from 'react';
-import { View, Text } from 'react-native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import Home from '../screens/Home';
-import Login from '../screens/Login';
-import Cadastro from '../screens/Cadastro';
-import Ajustes from '../screens/Ajustes';
-import { Feather } from "@expo/vector-icons"
-import Habitos from '../screens/Habitos';
-import Estatistica from '../screens/Estatistica';
+import { createStackNavigator } from '@react-navigation/stack';
+import Ajustes from '../screens/Ajustes/index'
+import MinhaConta from '../screens/MinhaConta/index';
+import Salvos from '../screens/Salvos';
+import Sobre from '../screens/Sobre';
+import Politica from '../screens/PoliticaDePrivacidade';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
+export function SettingsStack() {
+    return (
+        <Stack.Navigator
+            initialRouteName="AjustesHome"
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: "#232228",
+                    elevation: 0,
+                    shadowOpacity: 0,
+                },
+                headerTintColor: '#fff',
+                headerTitle: '',
+            }}
+        >
+            <Stack.Screen
+                name="AjustesHome"
+                component={Ajustes}
+                options={{
+                    headerShown: false
+                }}
+            />
 
-export default function App() {
-  return (
-    <NavigationContainer>
+            <Stack.Screen
+                name="MinhaConta"
+                component={MinhaConta}
+            />
 
-      <Tab.Navigator
-        screenOptions={{
-          headerShown: false,
-          tabBarInactiveTintColor: "#fff",
-          tabBarActiveTintColor: "#ad75fbff",
-          tabBarLabelPosition: "below-icon",
+            <Stack.Screen
+                name="Salvos"
+                component={Salvos}
+            />
 
-          tabBarIconStyle: {
-            marginTop: 5,
-          },
+            <Stack.Screen
+                name="Sobre"
+                component={Sobre}
+            />
 
-          tabBarLabelStyle: {
-            fontSize: 12,
-            fontWeight: "600",
-          },
+            <Stack.Screen
+                name="Politica"
+                component={Politica}
+            />
 
-          tabBarStyle: {
-            backgroundColor: "#171719",
-            borderTopWidth: 0,
-            height: 70,
-            borderRadius: 50,
-            position: "absolute",
-            bottom: 25,
-          }
-        }}
-      >
-
-        <Tab.Screen
-          name="Cadastro" component={Cadastro}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="user-plus" color={color} size={size} />
-            ),
-          }}
-        />
-
-        <Tab.Screen
-          name="Login" component={Login}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="log-in" color={color} size={size} />
-            ),
-          }}
-        />
-
-        <Tab.Screen
-          name="Home" component={Home}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="home" color={color} size={size} />
-            ),
-          }}
-        />
-
-        <Tab.Screen
-          name="Hábitos" component={Habitos}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="loader" color={color} size={size} />
-            ),
-          }}
-        />
-
-        <Tab.Screen
-          name="Estáticas" component={Estatistica}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="check-circle" color={color} size={size} />
-            ),
-          }}
-        />
-
-        <Tab.Screen
-          name="Ajustes" component={Ajustes}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="settings" color={color} size={size} />
-            ),
-          }}
-        />
-
-      </Tab.Navigator>
-
-    </NavigationContainer>
-  );
+        </Stack.Navigator>
+    );
 }
